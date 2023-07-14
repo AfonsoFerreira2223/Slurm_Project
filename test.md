@@ -21,4 +21,4 @@ This should display node1 on the controller
 
 Execute with:
 
-sbatch slurmtest && squeue
+```sbatch slurmtest && squeue```
