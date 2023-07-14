@@ -1,7 +1,7 @@
 **Change `SlurmctldHost=x.x.x.x` to your controllers private IP address (ip a) OR its hostname**
  
-**Alter this line  `NodeName=(client_hostname) NodeAddr=(client_private_IP_address)  CPUs=(number of cpu of your instance) State=UNKNOWN` and make the necessary 
-changes to every non-controller node (client) in your network.**
+**Alter this line  `NodeName=(client_hostname) NodeAddr=(client_private_IP_address)  CPUs=(number of cpu of your instance) State=UNKNOWN` and make the necessary**
+**changes to every non-controller node (client) in your network.**
 
 #Put this file on all nodes of your cluster.
 #See the slurm.conf man page for more information.
