@@ -19,3 +19,6 @@ This should display node1 on the controller
     	    node1 uptime
 ```
 
+Execute with:
+
+sbatch slurmtest && squeue
