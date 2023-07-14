@@ -19,7 +19,7 @@ hostnamectl set-hostname controller
 ```
 
 
-**You will change the hostname of every host, nodes and controller. As such, it's important to change the `/etc/hosts` to be the same accross every node and make sure each machine can recognize each other trhough their hostnames.**
+**You will change the hostname of every host, nodes and controller. As such, it's important to change the `/etc/hosts` to be the same across every node and make sure each machine can recognize each other through their hostnames.**
 
 An example using one controller (controller) and one node (node1) with IP addresses 172.31.89.139 and 172.31.80.16 respectively:
 
@@ -30,10 +30,10 @@ An example using one controller (controller) and one node (node1) with IP addres
 You can check the machines' hostname and Ip address with the commands `hostname` and `ip a`.
 
 
-**Dont forget to keep `/etc/hosts` updated every time you make a change on one of the slurm nodes.**
+**Don't forget to keep `/etc/hosts` updated every time you make a change on one of the slurm nodes.**
 
 
-Now that your slurm controller has a hostname (I will be using the name 'controller' here for simplicity sake) you can install slrum 
+Now that your slurm controller has a hostname (I will be using the name 'controller' here for simplicity's sake) you can install slurm
 
 ```
 apt install slurm-wlm
@@ -43,7 +43,7 @@ Got to the slurm default folder:
 
     cd /etc/slurm
 
-Now you have to create the fle slurm.conf
+Now you have to create the file slurm.conf
 
 
 There are two ways to edit this file.
@@ -75,22 +75,19 @@ Then on the client, use wget to grab the configuration from the server. (Refer t
 
 #### 2
 
-This method doesn't involve using the official slurm configutor.
+This method doesn't involve using the official slurm configurator.
 
-Go to the slurm.conf (controller) file on your left and paste it in a text editor. Make the neccessary changes to the template. 
+Go to the slurm.conf (controller) file and paste it into a text editor. Make the necessary changes to the template. 
 
- - Change `SlurmctldHost=x.x.x.x` to your controllers private IP address (ip a) OR its hostname
+
  
- - Alter this line  `NodeName=(client_hostname) NodeAddr=(client_private_IP_address)  CPUs=(number of cpu of your instance) State=UNKNOWN` and make the neccesary changes to every non controller node (client) in your network.
- 
-Copy paste this to
+Then place the file in
 
     nano /etc/slurm/slurm.conf
 
-**This file should be consistent for all nodes in the network.**
 
+Next, go to the cgroup.conf and copy-paste its content to
 
-Next go the cgroup.conf file on your left and copy paste its content to
 
 ```
 nano cgroup.conf
