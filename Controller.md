@@ -45,9 +45,12 @@ Got to the slurm default folder:
 
 Now you have to create the file slurm.conf
 
-#
 
 There are two ways to edit this file.
+
+
+#
+
 
 #### 1:
 
@@ -101,7 +104,12 @@ Create this file:
 nano slurmd.service
 ```
 
-And then check the status of slurm
+
+#
+
+
+After picking method 1 or 2 (they essentially boil down to the same thing) check the status of slurm
+
 
 ```
 systemctl daemon-reload
