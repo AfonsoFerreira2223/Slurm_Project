@@ -81,4 +81,4 @@ Just to make sure, disable slurmctld on the client since it may create problems:
 systemctl disable slurmctld
 ```
 
-
+## Just like with the server, now only the munge is left
