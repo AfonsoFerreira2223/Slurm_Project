@@ -1,0 +1,53 @@
+ - Change `SlurmctldHost=x.x.x.x` to your controllers private IP address (ip a) OR its hostname
+ 
+ - Alter this line  `NodeName=(client_hostname) NodeAddr=(client_private_IP_address)  CPUs=(number of cpu of your instance) State=UNKNOWN` and make the necessary changes to every non-controller node (client) in your network.
+
+#Put this file on all nodes of your cluster.
+#See the slurm.conf man page for more information.
+#
+ClusterName=cluster
+SlurmctldHost=x.x.x.x
+#
+#MailProg=/bin/mail
+MpiDefault=none
+#MpiParams=ports=#-#
+ProctrackType=proctrack/cgroup
+ReturnToService=1
+SlurmctldPidFile=/run/slurmctld.pid
+SlurmctldPort=6817
+SlurmdPidFile=/run/slurmd.pid
+SlurmdPort=6818
+SlurmdSpoolDir=/var/lib/slurm/slurmd
+SlurmUser=slurm
+SlurmdUser=root
+StateSaveLocation=/var/lib/slurm/slurmctld
+SwitchType=switch/none
+TaskPlugin=task/affinity
+#
+#
+#TIMERS
+#KillWait=30
+#MinJobAge=300
+#SlurmctldTimeout=120
+#SlurmdTimeout=300
+#
+#
+#SCHEDULING
+SchedulerType=sched/backfill
+SelectType=select/cons_tres
+SelectTypeParameters=CR_Core
+#
+#
+#LOGGING AND ACCOUNTING
+AccountingStorageType=accounting_storage/none
+#JobAcctGatherFrequency=30
+JobAcctGatherType=jobacct_gather/none
+#SlurmctldDebug=info
+SlurmctldLogFile=/var/log/slurm/slurmctld.log
+#SlurmdDebug=info
+SlurmdLogFile=/var/log/slurm/slurmd.log
+#
+#
+#COMPUTE NODES
+NodeName=node1 NodeAddr=x.x.x.x CPUs=2 State=UNKNOWN
+PartitionName=debug Nodes=ALL Default=YES MaxTime=INFINITE State=UP
