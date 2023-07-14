@@ -45,6 +45,7 @@ Got to the slurm default folder:
 
 Now you have to create the file slurm.conf
 
+#
 
 There are two ways to edit this file.
 
@@ -72,12 +73,13 @@ Then paste the conf into
 
 Then on the client, use wget to grab the configuration from the server. (Refer to client.md for this)
 
+#
 
 #### 2
 
 This method doesn't involve using the official slurm configurator.
 
-Go to the slurm.conf (controller) file and paste it into a text editor. Make the necessary changes to the template. 
+Go to the slurm.conf file and make the necessary changes to the template. 
 
 
  
